@@ -14,12 +14,12 @@ class IPS120():
         self.inst = rm.open_resource(address)
         self.inst.write_termination='\r'
         self.inst.read_termination='\r'
+        self.inst.write('C3')
 
 #get magnet parameters
         
     def get_setp(self):
         return self.inst.query('R8')
-    
     
     def get_magfield(self):
         while True:
@@ -78,51 +78,4 @@ class IPS120():
     def swap(self):
         self.inst.write('P4')
 
-#ips=IPS120('ASRL4::INSTR')      
-#ips.set_positive_field() 
-#print(ips.get_field() )
-        
-
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-# set the magnet parameters
-      
-#    def set_mag(self,value,rate):
-        
-        
         
